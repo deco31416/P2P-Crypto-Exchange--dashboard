@@ -1,13 +1,13 @@
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Badge } from "@/components/ui/badge"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
 
 interface Transaction {
-  id: string
-  type: "buy" | "sell" | "transfer"
-  asset: string
-  amount: string
-  status: "completed" | "pending" | "failed"
-  date: string
+  id: string;
+  type: "buy" | "sell" | "transfer";
+  asset: string;
+  amount: string;
+  status: "completed" | "pending" | "failed";
+  date: string;
 }
 
 const sampleTransactions: Transaction[] = [
@@ -43,7 +43,7 @@ const sampleTransactions: Transaction[] = [
     status: "failed",
     date: "2024-02-02 14:20",
   },
-]
+];
 
 export default function RecentTransactions() {
   return (
@@ -69,7 +69,7 @@ export default function RecentTransactions() {
             <TableCell>{tx.amount}</TableCell>
             <TableCell>
               <Badge
-                variant={tx.status === "completed" ? "success" : tx.status === "pending" ? "warning" : "destructive"}
+                variant={tx.status === "completed" ? "default" : tx.status === "pending" ? "secondary" : "destructive"}
               >
                 {tx.status.toUpperCase()}
               </Badge>
@@ -79,6 +79,5 @@ export default function RecentTransactions() {
         ))}
       </TableBody>
     </Table>
-  )
+  );
 }
-
