@@ -2,7 +2,7 @@
 
 import MarketOverview from "@/components/cards/MarketOverview";
 import OrderBook from "@/components/cards/OrderBook";
-import QuickExchangeV2 from "@/components/cards/QuickExchange";
+import QuickExchange from "@/components/cards/QuickExchange";
 import TradeHistory from "@/components/cards/TradeHistory";
 import TradingVolume from "@/components/cards/TradingVolume";
 import OngoingOperationsCard from "@/components/cards/OngoingOperationsCard";
@@ -46,7 +46,7 @@ export default function Extras() {
             <CardTitle>Quick Exchange</CardTitle>
           </CardHeader>
           <CardContent>
-            <QuickExchangeV2 />
+            <QuickExchange provider={null} />
           </CardContent>
         </Card>
 
