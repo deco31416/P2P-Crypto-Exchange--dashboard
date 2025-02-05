@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import QuickBuy from "@/components/QuickBuy"
-import type { ethers } from "ethers"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import QuickBuy from "@/components/QuickBuy";
+import { BrowserProvider } from "ethers";
 
 interface QuickExchangeProps {
-  provider: ethers.providers.Web3Provider | null
+  provider: BrowserProvider | null;
 }
 
 export default function QuickExchange({ provider }: QuickExchangeProps) {
@@ -18,5 +18,5 @@ export default function QuickExchange({ provider }: QuickExchangeProps) {
         <QuickBuy provider={provider} />
       </CardContent>
     </Card>
-  )
+  );
 }
