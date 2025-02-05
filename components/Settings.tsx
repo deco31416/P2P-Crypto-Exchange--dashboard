@@ -1,11 +1,11 @@
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Switch } from "@/components/ui/switch"
-import { Badge } from "@/components/ui/badge"
+import { useState } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
+import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -13,7 +13,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "@/components/ui/dialog";
 
 // Simulated user data
 const userData = {
@@ -21,17 +21,15 @@ const userData = {
   email: "john@example.com",
   wallet: "0x1234...5678",
   country: "United States",
-}
+};
 
 export default function Settings() {
-  const [isVerified, setIsVerified] = useState(false)
+  const [isVerified, setIsVerified] = useState(false);
 
   const startVerification = () => {
-    // Here you would integrate with Civic.com's API
-    console.log("Starting verification process with Civic.com")
-    // For demonstration, we'll just toggle the state
-    setIsVerified(true)
-  }
+    console.log("Starting verification process with Civic.com");
+    setIsVerified(true);
+  };
 
   return (
     <div className="space-y-6">
@@ -43,7 +41,7 @@ export default function Settings() {
         <CardContent className="space-y-4">
           <div className="flex justify-between items-center">
             <span>Verification Status:</span>
-            {isVerified ? <Badge variant="success">Verified</Badge> : <Badge variant="destructive">Not Verified</Badge>}
+            {isVerified ? <Badge variant="default">Verified</Badge> : <Badge variant="destructive">Not Verified</Badge>}
           </div>
           {!isVerified && (
             <Dialog>
@@ -130,6 +128,5 @@ export default function Settings() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
-
