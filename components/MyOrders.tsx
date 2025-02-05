@@ -59,7 +59,7 @@ export default function MyOrders() {
       <CardHeader>
         <div className="flex justify-between items-center">
           <CardTitle>My Orders</CardTitle>
-          <Select value={filter} onValueChange={(value: any) => setFilter(value)}>
+          <Select value={filter} onValueChange={(value: "all" | "open" | "completed" | "cancelled") => setFilter(value)}>
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="Filter orders" />
             </SelectTrigger>
@@ -99,7 +99,7 @@ export default function MyOrders() {
                 <TableCell>
                   <Badge
                     variant={
-                      order.status === "open" ? "default" : order.status === "completed" ? "success" : "destructive"
+                      order.status === "open" ? "default" : order.status === "completed" ? "secondary" : "destructive"
                     }
                   >
                     {order.status.toUpperCase()}

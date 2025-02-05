@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { useState } from "react"
+// import { useState } from "react"
 
 interface HeaderProps {
   account: string
@@ -20,7 +20,7 @@ interface HeaderProps {
 
 export default function Header({ account, onMenuClick, title, isSidebarOpen }: HeaderProps) {
   const { theme, setTheme } = useTheme()
-  const [language, setLanguage] = useState("es")
+  // const [language, setLanguage] = useState("es")
 
   const changeLanguage = (lang: string) => {
     setLanguage(lang)
@@ -102,5 +102,13 @@ export default function Header({ account, onMenuClick, title, isSidebarOpen }: H
       </div>
     </header>
   )
+}
+function setLanguage(lang: string) {
+  // This function can be used to change the language setting of the application.
+  // For example, you can store the selected language in localStorage or a global state.
+  localStorage.setItem("language", lang);
+  // You might also want to trigger a re-render or update some global state
+  // to reflect the language change throughout the application.
+  window.location.reload(); // This is a simple way to reload the app with the new language setting.
 }
 

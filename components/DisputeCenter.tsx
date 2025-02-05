@@ -97,8 +97,8 @@ export default function DisputeCenter() {
                             dispute.status === "pending"
                               ? "destructive"
                               : dispute.status === "in_review"
-                                ? "warning"
-                                : "success"
+                                ? "secondary"
+                                : "default"
                           }
                         >
                           {dispute.status.replace("_", " ").toUpperCase()}
@@ -154,7 +154,7 @@ export default function DisputeCenter() {
                     </div>
                     <div className="flex-1">
                       <p className="text-sm font-medium">Buyer</p>
-                      <p className="text-sm">I've sent the payment. Please check.</p>
+                      <p className="text-sm">Ive sent the payment. Please check.</p>
                     </div>
                   </div>
                   <div className="flex gap-2">
@@ -163,7 +163,7 @@ export default function DisputeCenter() {
                     </div>
                     <div className="flex-1">
                       <p className="text-sm font-medium">Seller</p>
-                      <p className="text-sm">I haven't received any payment yet.</p>
+                      <p className="text-sm">I havent received any payment yet.</p>
                     </div>
                   </div>
                 </div>
