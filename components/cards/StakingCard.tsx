@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function StakingCard() {
-  const [activeStakes, setActiveStakes] = useState([
+  const [activeStakes] = useState([
     { id: 1, token: "BTC", amount: "0.5", apy: "5%", duration: "30 days", rewards: "0.00068 BTC", status: "Active" },
     { id: 2, token: "ETH", amount: "10", apy: "4.5%", duration: "60 days", rewards: "0.0739 ETH", status: "Active" },
   ]);

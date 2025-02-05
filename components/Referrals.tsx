@@ -159,7 +159,7 @@ export default function Referrals() {
         </CardHeader>
         <CardContent>
           <ul className="list-disc pl-5 space-y-2">
-            <li>Earn a percentage of your referrals' token purchases, exchange fees, and IDO participations.</li>
+            <li>Earn a percentage of your referrals token purchases, exchange fees, and IDO participations.</li>
             <li>You can withdraw your earnings once you accumulate $5 or more.</li>
             <li>Referral rewards are calculated and added to your balance in real-time.</li>
             <li>The more active referrals you have, the higher your potential earnings.</li>

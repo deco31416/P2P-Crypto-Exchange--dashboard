@@ -37,11 +37,13 @@ export default function Sidebar({
 }: SidebarProps) {
   const [isPinned, setIsPinned] = useState(false);
 
-  const toggleSidebar = () => {
-    if (!isPinned) {
-      setIsOpen(!isOpen);
-    }
-  };
+  // const toggleSidebar = () => {
+  //   if (!isPinned) {
+  //     setIsOpen(!isOpen);
+  //   }
+  // };
+
+  // <button onClick={toggleSidebar}>Toggle Sidebar</button>
 
   const menuItems = [
     { icon: Home, text: "Dashboard", section: "dashboard" },

@@ -56,7 +56,7 @@ export default function MyTrades() {
       <CardHeader>
         <div className="flex justify-between items-center">
           <CardTitle>My Trades</CardTitle>
-          <Select value={filter} onValueChange={(value: any) => setFilter(value)}>
+          <Select value={filter} onValueChange={(value: "all" | "buy" | "sell") => setFilter(value)}>
             <SelectTrigger className="w-[150px]">
               <SelectValue placeholder="Filter trades" />
             </SelectTrigger>
