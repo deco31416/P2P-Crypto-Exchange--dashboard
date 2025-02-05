@@ -1,40 +1,42 @@
-import { useState } from "react"
-import type { ethers } from "ethers"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { ArrowRightLeft } from "lucide-react"
+"use client";
+
+import { useState } from "react";
+import { BrowserProvider } from "ethers";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { ArrowRightLeft } from "lucide-react";
 
 interface QuickBuyProps {
-  provider: ethers.providers.Web3Provider | null
+  provider: BrowserProvider | null;
 }
 
 export default function QuickBuy({ provider }: QuickBuyProps) {
-  const [fromCurrency, setFromCurrency] = useState("USD")
-  const [toCurrency, setToCurrency] = useState("USDT")
-  const [amount, setAmount] = useState("")
-  const [estimatedReceive, setEstimatedReceive] = useState("0")
+  const [fromCurrency, setFromCurrency] = useState("USD");
+  const [toCurrency, setToCurrency] = useState("USDT");
+  const [amount, setAmount] = useState("");
+  const [estimatedReceive, setEstimatedReceive] = useState("0");
 
   const handleSwap = () => {
-    setFromCurrency(toCurrency)
-    setToCurrency(fromCurrency)
-  }
+    setFromCurrency(toCurrency);
+    setToCurrency(fromCurrency);
+  };
 
   const handleAmountChange = (value: string) => {
-    setAmount(value)
-    // This is a placeholder calculation. In a real app, you'd fetch real-time exchange rates.
-    setEstimatedReceive((Number.parseFloat(value) * 0.99).toFixed(2))
-  }
+    setAmount(value);
+    // Placeholder calculation. In a real app, you'd fetch real-time exchange rates.
+    setEstimatedReceive((Number.parseFloat(value) * 0.99).toFixed(2));
+  };
 
   const handleQuickBuy = async () => {
     if (!provider) {
-      console.error("Provider not available")
-      return
+      console.error("Provider not available");
+      return;
     }
-    // Implement the actual buy logic here
-    console.log(`Buying ${amount} ${fromCurrency} worth of ${toCurrency}`)
-  }
+    // Implement actual buy logic
+    console.log(`Buying ${amount} ${fromCurrency} worth of ${toCurrency}`);
+  };
 
   return (
     <div className="space-y-4">
@@ -87,6 +89,5 @@ export default function QuickBuy({ provider }: QuickBuyProps) {
         Quick Buy
       </Button>
     </div>
-  )
+  );
 }
-
