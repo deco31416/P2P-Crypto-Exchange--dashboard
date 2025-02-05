@@ -1,44 +1,44 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import type { ethers } from "ethers"
-import Sidebar from "./Sidebar"
-import Header from "./Header"
-import P2PMarket from "./P2PMarket"
-import QuickBuy from "./QuickBuy"
-import MyOrders from "./MyOrders"
-import MyTrades from "./MyTrades"
-import RecentTransactions from "./RecentTransactions"
-import MyBalance from "./MyBalance"
-import Settings from "./Settings"
-import Deposit from "./Deposit"
-import Withdraw from "./Withdraw"
-import Exchange from "./Exchange"
-import OngoingOperations from "./OngoingOperations"
-import Appeals from "./Appeals"
-import IDO from "./IDO"
-import Staking from "./Staking"
-import Referrals from "./Referrals"
-import SocialFiRewards from "./SocialFiRewards"
-import Extras from "./Extras"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState, useEffect } from "react";
+import { BrowserProvider } from "ethers";
+import Sidebar from "./Sidebar";
+import Header from "./Header";
+import P2PMarket from "./P2PMarket";
+import QuickBuy from "./QuickBuy";
+import MyOrders from "./MyOrders";
+import MyTrades from "./MyTrades";
+import RecentTransactions from "./RecentTransactions";
+import MyBalance from "./MyBalance";
+import Settings from "./Settings";
+import Deposit from "./Deposit";
+import Withdraw from "./Withdraw";
+import Exchange from "./Exchange";
+import OngoingOperations from "./OngoingOperations";
+import Appeals from "./Appeals";
+import IDO from "./IDO";
+import Staking from "./Staking";
+import Referrals from "./Referrals";
+import SocialFiRewards from "./SocialFiRewards";
+import Extras from "./Extras";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface DashboardProps {
-  account: string
-  provider: ethers.providers.Web3Provider | null
+  account: string;
+  provider: BrowserProvider | null;
 }
 
 export default function Dashboard({ account, provider }: DashboardProps) {
-  const [activeSection, setActiveSection] = useState("dashboard")
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024)
+  const [activeSection, setActiveSection] = useState("dashboard");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(typeof window !== "undefined" && window.innerWidth < 1024);
 
   // Detectar cambios de tamaño de pantalla
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 1024)
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+    const handleResize = () => setIsMobile(window.innerWidth < 1024);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Diccionario para obtener títulos de secciones (en lugar de switch-case)
   const sectionTitles: Record<string, string> = {
@@ -56,8 +56,8 @@ export default function Dashboard({ account, provider }: DashboardProps) {
     settings: "Settings",
     referrals: "Referrals",
     "socialfi-rewards": "SocialFi Rewards",
-    Extras: "Extras",
-  }
+    extras: "Extras",
+  };
 
   return (
     <div className="flex min-h-screen bg-background">
@@ -139,6 +139,5 @@ export default function Dashboard({ account, provider }: DashboardProps) {
         </main>
       </div>
     </div>
-  )
+  );
 }
-
