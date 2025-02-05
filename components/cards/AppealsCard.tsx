@@ -101,7 +101,7 @@ export default function AppealsCard() {
                         ? "secondary"
                         : appeal.status === "Under Review"
                         ? "default"
-                        : "success"
+                        : "outline" // Resolved ahora usa "outline" en lugar de "success"
                     }
                   >
                     {appeal.status}
