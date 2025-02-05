@@ -11,7 +11,7 @@ export default function MyBalance({ showSecondary = false }: MyBalanceProps) {
       <CardContent className="p-6">
         <div className="flex items-center gap-4">
           <div className="rounded-full bg-primary-foreground/20 p-2">
-            <img src="/placeholder.svg?height=40&width=40" alt="Robot" className="h-10 w-10" />
+            <img src="https://cryptologos.cc/logos/chainx-pcx-logo.svg" alt="Robot" className="h-10 w-10" />
           </div>
           <div className="flex flex-col">
             <div className="text-sm opacity-80">Hi 0x23...03E2 👋 your balance is:</div>

@@ -20,6 +20,7 @@ import IDO from "./IDO"
 import Staking from "./Staking"
 import Referrals from "./Referrals"
 import SocialFiRewards from "./SocialFiRewards"
+import Extras from "./Extras"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface DashboardProps {
@@ -55,6 +56,7 @@ export default function Dashboard({ account, provider }: DashboardProps) {
     settings: "Settings",
     referrals: "Referrals",
     "socialfi-rewards": "SocialFi Rewards",
+    Extras: "Extras",
   }
 
   return (
@@ -132,6 +134,7 @@ export default function Dashboard({ account, provider }: DashboardProps) {
             {activeSection === "staking" && <Staking />}
             {activeSection === "referrals" && <Referrals />}
             {activeSection === "socialfi-rewards" && <SocialFiRewards />}
+            {activeSection === "extras" && <Extras />}
           </div>
         </main>
       </div>

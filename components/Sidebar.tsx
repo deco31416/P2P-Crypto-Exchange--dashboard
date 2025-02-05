@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import {
   Home,
   DollarSign,
@@ -16,25 +16,32 @@ import {
   Award,
   Users,
   Gift,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+  LayoutGrid,
+} from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface SidebarProps {
-  isOpen: boolean
-  setIsOpen: (isOpen: boolean) => void
-  activeSection: string
-  setActiveSection: (section: string) => void
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+  activeSection: string;
+  setActiveSection: (section: string) => void;
 }
 
-export default function Sidebar({ isOpen, setIsOpen, activeSection, setActiveSection }: SidebarProps) {
-  const [isPinned, setIsPinned] = useState(false)
+export default function Sidebar({
+  isOpen,
+  setIsOpen,
+  activeSection,
+  setActiveSection,
+}: SidebarProps) {
+  const [isPinned, setIsPinned] = useState(false);
 
   const toggleSidebar = () => {
     if (!isPinned) {
-      setIsOpen(!isOpen)
+      setIsOpen(!isOpen);
     }
-  }
+  };
 
   const menuItems = [
     { icon: Home, text: "Dashboard", section: "dashboard" },
@@ -50,58 +57,74 @@ export default function Sidebar({ isOpen, setIsOpen, activeSection, setActiveSec
     { icon: Award, text: "Staking", section: "staking" },
     { icon: Users, text: "Referrals", section: "referrals" },
     { icon: Gift, text: "SocialFi Rewards", section: "socialfi-rewards" },
+    { icon: LayoutGrid, text: "Extras", section: "extras" },
     { icon: Settings, text: "Settings", section: "settings" },
-  ]
+  ];
 
   return (
     <div
       className={cn(
-        "fixed left-0 top-0 z-40 h-screen bg-card border-r border-border transition-all duration-300 ease-in-out",
+        "fixed left-0 top-0 z-50 h-screen backdrop-blur-lg bg-card/80 border-r border-border shadow-lg transition-all duration-300 ease-in-out",
         isOpen ? "w-72" : "w-20",
-        isPinned && "shadow-lg",
+        isPinned && "shadow-xl"
       )}
       onMouseEnter={() => !isPinned && setIsOpen(true)}
       onMouseLeave={() => !isPinned && setIsOpen(false)}
     >
       <div className="flex h-full flex-col">
         {/* Logo y Título */}
-        <div className="flex items-center gap-2 p-4">
+        <div className="flex items-center gap-3 p-4">
           <img
-            src="/placeholder.svg?height=32&width=32"
+            src="https://cryptologos.cc/logos/chainx-pcx-logo.svg"
             alt="Logo"
             className="h-8 w-8 transition-all duration-300"
           />
-          {isOpen && <span className="text-lg font-semibold">CriptoCambio</span>}
+          {isOpen && (
+            <span className="text-lg font-bold tracking-wide">
+              CriptoCambio
+            </span>
+          )}
         </div>
 
         {/* Menú de Navegación */}
-        <nav className="flex-1 space-y-1 p-2 overflow-y-auto">
-          {menuItems
-            .filter((item) => item.section !== "settings")
-            .map((item) => (
-              <Button
-                key={item.section}
-                variant={activeSection === item.section ? "secondary" : "ghost"}
-                className={cn("w-full justify-start", !isOpen && "justify-center px-0")}
-                onClick={() => setActiveSection(item.section)}
-              >
-                <item.icon className={cn("h-5 w-5", isOpen && "mr-2")} />
-                {isOpen && <span>{item.text}</span>}
-              </Button>
-            ))}
-        </nav>
+        <ScrollArea className="flex-1 p-2 pr-6">
+          <nav className="space-y-1">
+            {menuItems
+              .filter((item) => item.section !== "settings")
+              .map((item) => (
+                <Button
+                  key={item.section}
+                  variant={activeSection === item.section ? "secondary" : "ghost"}
+                  className={cn(
+                    "w-full flex items-center justify-start px-4 py-3 rounded-lg hover:bg-accent transition-all",
+                    !isOpen && "justify-center px-0"
+                  )}
+                  onClick={() => setActiveSection(item.section)}
+                >
+                  <item.icon className="h-5 w-5" />
+                  {isOpen && <span className="ml-3">{item.text}</span>}
+                </Button>
+              ))}
+          </nav>
+        </ScrollArea>
+
+        {/* Separador */}
+        <div className="w-full h-0.5 bg-border my-2"></div>
 
         {/* Sección Inferior - Settings & Pin Sidebar */}
-        <div className="mt-auto w-full border-t border-border p-4 flex flex-col gap-2">
+        <div className="w-full p-4 flex flex-col gap-3">
           {/* Botón de Settings */}
           <Button
             variant="outline"
             size="icon"
             onClick={() => setActiveSection("settings")}
-            className={cn("w-full", !isOpen && "px-0")}
+            className={cn(
+              "w-full flex items-center justify-start px-4 py-3 rounded-lg hover:bg-accent transition-all",
+              !isOpen && "justify-center px-0"
+            )}
           >
             <Settings className="h-5 w-5" />
-            {isOpen && <span className="ml-2">Settings</span>}
+            {isOpen && <span className="ml-3">Settings</span>}
           </Button>
 
           {/* Botón de Pin Sidebar */}
@@ -109,7 +132,10 @@ export default function Sidebar({ isOpen, setIsOpen, activeSection, setActiveSec
             variant="outline"
             size="icon"
             onClick={() => setIsPinned(!isPinned)}
-            className={cn("w-full", !isOpen && "px-0")}
+            className={cn(
+              "w-full flex items-center justify-start px-4 py-3 rounded-lg hover:bg-accent transition-all",
+              !isOpen && "justify-center px-0"
+            )}
           >
             {isPinned ? (
               isOpen ? (
@@ -122,11 +148,14 @@ export default function Sidebar({ isOpen, setIsOpen, activeSection, setActiveSec
             ) : (
               <ChevronRight className="h-4 w-4" />
             )}
-            {isOpen && <span className="ml-2">{isPinned ? "Unpin" : "Pin"} Sidebar</span>}
+            {isOpen && (
+              <span className="ml-3">
+                {isPinned ? "Unpin Sidebar" : "Pin Sidebar"}
+              </span>
+            )}
           </Button>
         </div>
       </div>
     </div>
-  )
+  );
 }
-
