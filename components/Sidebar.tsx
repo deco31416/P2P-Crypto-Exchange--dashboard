@@ -83,7 +83,7 @@ export default function Sidebar({
           />
           {isOpen && (
             <span className="text-lg font-bold tracking-wide">
-              CriptoCambio
+              P2Dex
             </span>
           )}
         </div>
