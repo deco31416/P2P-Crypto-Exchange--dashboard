@@ -1,0 +1,19 @@
+{
+    "abi": [
+      {
+        "constant": true,
+        "inputs": [],
+        "name": "getTotalStaked",
+        "outputs": [{ "name": "", "type": "uint256" }],
+        "type": "function"
+      },
+      {
+        "constant": false,
+        "inputs": [{ "name": "amount", "type": "uint256" }],
+        "name": "stake",
+        "outputs": [],
+        "type": "function"
+      }
+    ]
+  }
+  
