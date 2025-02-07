@@ -1,5 +1,3 @@
-# CambiaCripto.com
-
 [![Next.js](https://img.shields.io/badge/Next.js-14.2.16-blue.svg)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4.1-blue.svg)](https://tailwindcss.com/)
@@ -9,94 +7,95 @@
 [![Radix UI](https://img.shields.io/badge/Radix%20UI-1.2.5-blue.svg)](https://www.radix-ui.com/)
 [![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## 📌 CambiaCripto - Plataforma P2P Descentralizada
-CambiaCripto es un **intercambio P2P completamente descentralizado**, diseñado para permitir transacciones **Fiat-Cripto, Cripto-Fiat y Cripto-Cripto** sin intermediarios. Basado en **Next.js, React, TailwindCSS y Ethers.js**, CambiaCripto garantiza **seguridad, privacidad y control total sobre los fondos de los usuarios.**
+# P2P Crypto Exchange
+
+**Fully decentralized P2P exchange**, designed to enable **Fiat-Crypto, Crypto-Fiat, and Crypto-Crypto** transactions without intermediaries. Built with **Next.js, React, TailwindCSS, and Ethers.js**, CambiaCripto ensures **security, privacy, and full control over users' funds.**
 
 ---
 
-## 🔗 **Estructura del Ecosistema**
+## 🔗 **Ecosystem Structure**
 
 ### **📊 1. Dashboard**
-El panel de control centraliza toda la información del usuario:
-- Balance de activos disponibles (Fiat y Cripto).
-- Historial de transacciones y órdenes en curso.
-- Estadísticas de usuario como tasa de éxito y tiempo de respuesta.
+The main control panel centralizes all user information:
+- Balance of available assets (Fiat and Crypto).
+- Transaction history and active orders.
+- User statistics such as success rate and response time.
 
 ### **🔄 2. P2P Market**
-Facilita la compra y venta de activos entre pares sin intermediarios:
-- Publicación de órdenes personalizadas.
-- Filtrado por moneda, método de pago y reputación del usuario.
-- Mecanismo de escrow descentralizado para seguridad.
+Facilitates peer-to-peer asset trading without intermediaries:
+- Posting of custom orders.
+- Filtering by currency, payment method, and user reputation.
+- Decentralized escrow mechanism for security.
 
 ### **💰 3. Deposit & Withdraw**
-- **Deposit:** Permite a los usuarios añadir fondos a sus cuentas mediante diferentes métodos.
-- **Withdraw:** Facilita el retiro de activos cripto y fiat con múltiples opciones de pago.
+- **Deposit:** Allows users to add funds to their accounts using various methods.
+- **Withdraw:** Enables the withdrawal of crypto and fiat assets with multiple payment options.
 
 ### **💹 4. Exchange**
-Plataforma para intercambiar activos de forma instantánea:
-- Conversión entre distintas criptomonedas y monedas fiat.
-- Cálculo en tiempo real de precios con fuentes externas.
-- Integración con liquidez descentralizada.
+Platform for instant asset swaps:
+- Conversion between different cryptocurrencies and fiat currencies.
+- Real-time price calculations using external data sources.
+- Integration with decentralized liquidity.
 
 ### **📄 5. My Orders & My Trades**
-- **My Orders:** Lista de órdenes creadas por el usuario en el mercado P2P.
-- **My Trades:** Histórico de transacciones completadas con detalles de ejecución.
+- **My Orders:** List of orders created by the user in the P2P market.
+- **My Trades:** Transaction history with execution details.
 
 ### **⏳ 6. Ongoing Operations**
-Monitoreo en tiempo real de todas las operaciones activas, permitiendo seguimiento y gestión.
+Real-time monitoring of all active operations, allowing for tracking and management.
 
 ### **⚖️ 7. Appeals**
-Sistema de resolución de disputas para transacciones en conflicto:
-- Mediación descentralizada.
-- Pruebas aportadas por ambas partes.
-- Resolución basada en reputación y blockchain.
+Dispute resolution system for conflicted transactions:
+- Decentralized mediation.
+- Evidence provided by both parties.
+- Reputation-based blockchain resolution.
 
 ### **🚀 8. IDO (Initial Dex Offering)**
-Plataforma para participar en preventas de tokens:
-- Listado de proyectos en preventa.
-- Condiciones y reglas de participación.
-- Transparencia y auditoría en smart contracts.
+Platform to participate in token presales:
+- Listing of projects in presale.
+- Participation rules and conditions.
+- Transparency and smart contract auditing.
 
 ### **🎖 9. Staking**
-Opción para generar ingresos pasivos a través de staking de criptomonedas.
-- Diferentes periodos de bloqueo.
-- Tasas de interés variables (APY).
-- Recompensas en tokens nativos o asociados.
+Option to generate passive income through crypto staking.
+- Different locking periods.
+- Variable interest rates (APY).
+- Rewards in native or associated tokens.
 
 ### **👥 10. Referrals**
-Sistema de referidos para incentivar la adopción:
-- Enlace personalizado para cada usuario.
-- Recompensas escalonadas según actividad de referidos.
+Referral system to incentivize adoption:
+- Personalized referral link for each user.
+- Tiered rewards based on referral activity.
 
 ### **🎁 11. SocialFi Rewards**
-Programa de incentivos basado en interacciones y contribuciones dentro de la comunidad.
-- Loterías y recompensas por engagement.
-- Beneficios por participación activa en la plataforma.
+Incentive program based on interactions and community contributions.
+- Lotteries and rewards for engagement.
+- Benefits for active platform participation.
 
 ### **➕ 12. Extras**
-Sección con herramientas y funciones adicionales en desarrollo para la comunidad.
+Section with additional tools and features in development for the community.
 
 ---
 
-## 🚀 **Conclusiones y Próximos Pasos**
-📌 **Optimizar la UI con TailwindCSS.**  
-📌 **Conectar APIs de tasas en tiempo real.**  
-📌 **Mejorar la experiencia de usuario en la plataforma.**  
+## 🚀 **Conclusions & Next Steps**
+📌 **Optimize UI with TailwindCSS.**  
+📌 **Connect real-time rate APIs.**  
+📌 **Improve user experience on the platform.**  
 
 ---
 
-## 🛠️ **Tecnologías Utilizadas**
-- **Next.js** (Framework de React)
-- **React** (Interfaz de usuario)
-- **TailwindCSS** (Diseño responsivo y modular)
-- **Ethers.js** (Conexión con blockchain Ethereum y contratos inteligentes)
-- **Thirdweb** (Herramientas para Web3 y contratos inteligentes)
-- **Recharts** (Visualización de datos en gráficos dinámicos)
-- **Radix UI** (Componentes accesibles para la UI)
+## 🛠️ **Technologies Used**
+- **Next.js** (React framework)
+- **React** (User interface)
+- **TailwindCSS** (Responsive and modular design)
+- **Ethers.js** (Ethereum blockchain connection and smart contracts)
+- **Thirdweb** (Web3 and smart contract tools)
+- **Recharts** (Dynamic data visualization)
+- **Radix UI** (Accessible UI components)
 
 ---
 
-## 📜 **Licencia**
-Este proyecto está bajo la licencia [MIT](LICENSE).
+## 📜 **License**
+This project is licensed under the [MIT License](LICENSE).
 
-🚀 **Desarrollado por [DECO31416](https://deco31416.com) - Innovación en DeFi y Web3.**
+🚀 **Developed by [DECO31416](https://deco31416.com) - Innovation in DeFi and Web3.**
