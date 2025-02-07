@@ -1,3 +1,5 @@
+![Cover Image](https://github.com/deco31416/P2P-Crypto-Exchange--dashboard/blob/main/public/cover.png?raw=true)
+
 [![Next.js](https://img.shields.io/badge/Next.js-14.2.16-blue.svg)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4.1-blue.svg)](https://tailwindcss.com/)
@@ -14,6 +16,9 @@
 ---
 
 ## 🔗 **Ecosystem Structure**
+
+![P2P Exchange](https://github.com/deco31416/P2P-Crypto-Exchange--dashboard/blob/main/public/p2pexchange.webp?raw=true)
+
 
 ### **📊 1. Dashboard**
 The main control panel centralizes all user information:
